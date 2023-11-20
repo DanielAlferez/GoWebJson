@@ -1,0 +1,51 @@
+<!-- templates/punto3.html -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Punto 7</title>
+    <style>
+        .container {
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+        }
+
+        h1 {
+            text-align: center;
+            color: #3498db;
+        }
+    </style>
+</head>
+<body>
+{{template "navbar.html"}}
+<div class="container">
+    <h1>Estadisticas de cada curso</h1>
+
+</div>
+<div class="tables">
+    {{range .}}
+    <h2>Curso: {{.Curso}}</h2>
+    <table>
+        <tr>
+            <th>Promedio</th>
+            <th>Rango</th>
+            <th>Varianza</th>
+            <th>Desviación estándar</th>
+
+        </tr>
+        <tr>
+            <td>{{.Promedio}}</td>
+            <td>{{.Rango}}</td>
+            <td>{{.Varianza}}</td>
+            <td>{{.DE}}</td>
+
+        </tr>
+    </table>
+    <br><br><br><br><br>
+    {{end}}
+</div>
+</body>
+</html>

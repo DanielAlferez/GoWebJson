@@ -1,0 +1,38 @@
+<!-- templates/punto3.html -->
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Punto 9</title>
+  <style>
+    .container {
+      max-width: 800px;
+      margin: 50px auto;
+      padding: 20px;
+      background-color: #fff;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+      border-radius: 10px;
+    }
+
+    h1 {
+      text-align: center;
+      color: #3498db;
+    }
+  </style>
+</head>
+<body>
+{{template "navbar.html"}}
+<div class="container">
+  <h1>Promedio de estudiantes por cada rango de edad</h1>
+
+</div>
+<div class="tables">
+  {{range .}}
+  <div class="result">
+    <h2>{{.EdadInf}} - {{.EdadSup}}</h2>
+    <p>Promedio: {{.Promedio}}</p>
+  </div>
+  <br><br><br><br><br>
+  {{end}}
+</div>
+</body>
+</html>
